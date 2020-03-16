@@ -1,19 +1,16 @@
 ﻿li{list-style-type: square;}
 #cena {
-    color: red;
-    font-weight: bold;
-}
-.wstep {
-    font-style: italic;
-}
-h1 {
-    color: blue
-}
+	color: red;
+	font-weight: bold;}
+.wstep {font-style: italic;}
 
-h1 {
-    color: green
-}
-td >img {border-style:solid;border-color:blue;}:hover {border-color:red;}
+h1 {color: blue}
+
+h1 {color: green}
+
+td >img {
+	border-style:solid;border-color:blue;
+	}:hover {border-color:red;}
 h1 + h2{letter-spacing: 5px}
 td[colspan="2"] p { font-size:small; }
 p+p {color:gray;}
