@@ -1,0 +1,35 @@
+﻿@{
+	Layout = null;
+	var rules = (List<string>)Session["rules"];
+	if (rules == null)
+	{
+		rules = new List<string>();
+	}
+	if (IsPost)
+	{
+		rules.Add(Request.Form["rule"]);
+		Session["rules"] = rules;
+	}
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title></title>
+</head>
+<body>
+	<form action="Rules.cshtml" method="post">
+		Input rule: <input name="rule" type="text" />
+		<input type="submit" value="Submit rule" />
+	</form>
+	<ol>
+		@foreach (var Rule in rules)
+		{
+			<li>@Rule</li>
+		}
+	</ol>
+
+</body>
+</html>
