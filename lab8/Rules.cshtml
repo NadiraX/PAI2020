@@ -1,15 +1,17 @@
 ﻿@{
-	Layout = null;
-	var rules = (List<string>)Session["rules"];
-	if (rules == null)
-	{
-		rules = new List<string>();
-	}
-	if (IsPost)
-	{
-		rules.Add(Request.Form["rule"]);
-		Session["rules"] = rules;
-	}
+    Layout = null;
+    var rules = (List<string>)Session["rules"];
+    if (rules == null)
+    {
+        rules = new List<string>();
+    }
+    if (IsPost)
+    {
+        rules.Add(Request.Form["rule"]);
+        Session["rules"] = rules;
+        Response.Redirect("Rules.cshtml");
+    }
+
 }
 
 <!DOCTYPE html>
