@@ -12,6 +12,6 @@ namespace WebApplication1.Models
         [Required(ErrorMessage = "Name is required!")]
         [StringLength(50, ErrorMessage = "Maximal length of the Name of a genre is 50 characters!")]
         public string Name { set; get; }
-        public ICollection<Song> Songs { set; get; }
+        public ICollection<Song> Songs { get; set; }
     }
 }

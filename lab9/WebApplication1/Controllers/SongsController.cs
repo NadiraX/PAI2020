@@ -75,7 +75,7 @@ namespace WebApplication1.Controllers
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Artist,Genre")] Song song)
+        public ActionResult Edit([Bind(Include = "Id,Name,Artist,GenreID")] Song song)
         {
             if (ModelState.IsValid)
             {

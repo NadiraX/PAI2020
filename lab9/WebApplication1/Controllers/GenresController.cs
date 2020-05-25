@@ -21,7 +21,10 @@ namespace WebApplication1.Controllers
             {
                 return PartialView("_GenresList", db.Genres.ToList());
             }
-            return View(db.Genres.ToList());
+            else
+            {
+                return View(db.Genres.ToList());
+            }
         }
 
         // GET: Genres/Details/5
@@ -42,7 +45,6 @@ namespace WebApplication1.Controllers
         // GET: Genres/Create
         public ActionResult Create()
         {
-            ViewBag.Genres = db.Genres.ToList();
             return View();
         }
 
@@ -53,7 +55,6 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name")] Genre genre)
         {
-            ViewBag.Genres = db.Genres.ToList();
             if (ModelState.IsValid)
             {
                 db.Genres.Add(genre);
@@ -95,25 +96,10 @@ namespace WebApplication1.Controllers
             return View(genre);
         }
 
-        // GET: Genres/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Genre genre = db.Genres.Find(id);
-            if (genre == null)
-            {
-                return HttpNotFound();
-            }
-            return View(genre);
-        }
 
         // POST: Genres/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpDelete, ActionName("Delete")]
+        public ActionResult Delete(int id)
         {
             Genre genre = db.Genres.Find(id);
             db.Genres.Remove(genre);
