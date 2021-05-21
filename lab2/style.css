@@ -1,0 +1,123 @@
+﻿
+#hamburger2{
+	display:none;
+}
+html {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+body{
+	height: 100%;
+	display:flex;
+	flex-direction:column;
+	padding: 0;
+	margin: 0;
+}
+p{
+	padding: 0;
+	margin: 0;
+}
+main{
+	padding:15px;
+	display:flex;
+	flex-direction:row;
+}
+article{
+	text-align:justify;
+	display:flex;
+	flex-direction:column;
+	width:100%;
+	border-width:2px;
+	border:solid;
+}
+article p{
+	padding:15px;
+}
+* {
+  box-sizing: border-box;
+  font-family: Verdana;
+  font-size: 16px;
+  font-weight:normal;
+  text-decoration: none;
+  color: black;
+}
+header{
+	margin:30px;
+	align-items:center;
+	display:flex;
+	flex-direction:row;
+}
+#Tytuł{
+	flex-grow:2;
+	font-size: 32px;
+	margin-left:15px;
+}
+nav{
+	display:flex;
+	align-self:flex-start;
+	flex-grow:4;
+	justify-content:space-around;
+	
+}
+#logo{
+	flex-grow:2;
+}
+img{
+	width: 75px; 
+    height: 75px;
+}
+h4{
+	align-self:flex-end;
+	background:grey;
+	border-left:solid;
+	border-bottom:solid;
+	width:50%;
+	height:50px;
+	font-size:1.5em;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	margin:0;
+	border-width:2px;
+}
+footer{
+	height:100px;
+	background-color:LightGray;
+	border-top:solid;
+	border-width:2px;
+	margin-top:15px;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+}
+.nazw{
+	font-weight:bold;
+}
+.content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex-shrink: 0;
+}
+@media all and (max-width: 900px) {
+ main {
+ flex-wrap: wrap;
+ }
+ .navi{
+	 display:none;
+ }
+ #hamburger2{
+	 display:block;
+	 width:75px;
+	 height:75px;
+ }
+ #Tytuł{
+	 display:none;
+ }
+ header{
+	 justify-content:space-between;
+ }
+
+}
